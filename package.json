@@ -1,4 +1,29 @@
 {
   "name": "js-plugin-infra",
+  "homepage": "https://github.com/CodeOfMisanthrope/js-plugin-infra/#readme",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": {
+    "name": "CodeOfMisanthrope",
+    "email": "iosdsbb@gmail.com",
+    "url": "https://github.com/CodeOfMisanthrope"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeOfMisanthrope/js-plugin-infra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CodeOfMisanthrope/js-plugin-infra/issues"
+  },
+  "keywords": [
+    "Plugin",
+    "Infra"
+  ],
+  "type": "module",
+  "exports": {
+    "import": "./dist/bundle.mjs",
+    "require": "./dist/bundle.cjs",
+    "default": "./dist/bundle.mjs"
+  },
   "packageManager": "yarn@4.9.4"
 }
