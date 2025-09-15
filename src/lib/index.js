@@ -31,6 +31,11 @@ export class Todo {
     this.#mount($el);
   }
 
+  /**
+   * Монтирует элемент в корневой контейнер
+   * @private
+   * @param {HTMLElement} $el - Элемент для монтирования
+   */
   #mount($el) {
     this.#root.appendChild($el);
   }
