@@ -1,4 +1,7 @@
 import {defineConfig} from "vite";
+import path from "node:path";
+
+const dirname = import.meta.dirname;
 
 const config = defineConfig({
   mode: 'development',
@@ -8,7 +11,12 @@ const config = defineConfig({
   },
 
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"],
+    alias: [
+      { find: "~lib", replacement: path.resolve(dirname, "src", "lib") },
+      { find: "~core", replacement: path.resolve(dirname, "src", "lib", "core") },
+      { find: "~assets", replacement: path.resolve(dirname, "assets") },
+    ]
   },
 });
 
