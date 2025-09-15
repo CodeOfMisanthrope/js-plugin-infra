@@ -53,6 +53,11 @@ export class Todo {
     return `${num}-${this.#storageKey}`;
   }
 
+  /**
+   * Добавляет новую задачу в хранилище
+   * @param {TodoTask} task - Объект задачи для добавления
+   * @returns {void}
+   */
   addTask(task) {
     this.#storage.set(this.#getKey(this.#countTasks++), task);
   }
