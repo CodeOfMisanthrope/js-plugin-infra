@@ -22,8 +22,17 @@
   "type": "module",
   "exports": {
     "import": "./dist/bundle.mjs",
-    "require": "./dist/bundle.cjs",
     "default": "./dist/bundle.mjs"
   },
-  "packageManager": "yarn@4.9.4"
+  "packageManager": "yarn@4.9.4",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^24.4.0",
+    "rollup": "^4.50.1",
+    "rollup-plugin-delete": "^3.0.1"
+  }
 }
