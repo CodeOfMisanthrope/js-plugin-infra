@@ -26,13 +26,15 @@
   },
   "packageManager": "yarn@4.9.4",
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "serve": "vite"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^24.4.0",
     "rollup": "^4.50.1",
-    "rollup-plugin-delete": "^3.0.1"
+    "rollup-plugin-delete": "^3.0.1",
+    "vite": "^7.1.5"
   }
 }
