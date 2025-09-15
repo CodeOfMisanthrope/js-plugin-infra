@@ -35,6 +35,11 @@ export class Todo {
     this.#root.appendChild($el);
   }
 
+  /**
+   * Создает основную структуру DOM
+   * @private
+   * @returns {HTMLElement} Корневой элемент
+   */
   #create() {
     const $root = document.createElement('div');
     const $ul = document.createElement('ul');
