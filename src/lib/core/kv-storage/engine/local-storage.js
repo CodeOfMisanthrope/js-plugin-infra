@@ -8,7 +8,7 @@ export default class LocalStorageEngine {
   /**
    * Получает значение по ключу из localStorage
    * @param {string} key - Ключ для поиска значения
-   * @returns {string | null | undefined} Значение по ключу или null если не найдено
+   * @returns {Nullable<string>} Значение по ключу или null если не найдено
    */
   get(key) {
     return localStorage.getItem(key);
