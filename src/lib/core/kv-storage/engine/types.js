@@ -1,9 +1,4 @@
 /**
- * @typedef {string | null | undefined} Nullable
- * @template T
- */
-
-/**
  * Интерфейс для движка хранения ключ-значение
  * @interface KVStorageEngine
  */
@@ -13,7 +8,7 @@
  * @function
  * @name KVStorageEngine#get
  * @param {string} key - Ключ для поиска значения
- * @returns {string | null | undefined} Значение по ключу или null/undefined если не найдено
+ * @returns {Nullable<string>} Значение по ключу или null/undefined если не найдено
  */
 
 /**
