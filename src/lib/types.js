@@ -13,7 +13,7 @@
 
 /**
  * @typedef {Object} TodoTask
- * @implements {SerializableObject}
+ * @implements {SerializableObject<TodoTask>}
  * @property {string} id - Уникальный идентификатор
  * @property {string} title - Заголовок задачи
  * @property {string} [description] - Описание задачи
@@ -24,4 +24,5 @@
  * @property {string} [category] - Категория задачи
  * @property {Object} [metadata] - Дополнительные метаданные
  * @property {function(): SerializableVal} toJSON - Метод для сериализации задачи в JSON
+ * @property {function(): TodoTask} fromJSON - Метод для сериализации задачи в JSON
  */
