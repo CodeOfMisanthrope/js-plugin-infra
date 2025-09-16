@@ -1,0 +1,22 @@
+.form__input {
+  padding: 12px 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__input:active {
+  outline: none;
+}
+
+.form__submit {
+  padding: 10px 7px;
+  max-width: 150px;
+  background-color: #ffe3e3;
+  border-radius: 5px;
+  border: 1px solid #ffc5c5;
+  font-size: 14px;
+}
