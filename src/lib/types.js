@@ -9,6 +9,7 @@
  * @property {HTMLElement} [root] - DOM элемент-контейнер для рендера todo-списка
  * @property {string} [storageKey='todos'] - Ключ для сохранения данных в хранилище
  * @property {boolean} [autoSave=true] - Автоматически сохранять изменения
+ * @property {EventEmitter} ee - EventEmitter
  */
 
 /**
@@ -20,7 +21,6 @@
  * @property {boolean} [completed] - Статус выполнения
  * @property {Date} [createdAt] - Дата создания
  * @property {'low'|'medium'|'high'|'urgent'} [priority='medium'] - Приоритет
- * @property {string} ee - EventEmitter
  // * @property {function(): SerializableVal} toJSON - Метод для сериализации задачи в JSON
  // * @property {function(): TodoTask} fromJSON - Метод для сериализации задачи в JSON
  */
