@@ -20,6 +20,7 @@
  * @property {boolean} [completed] - Статус выполнения
  * @property {Date} [createdAt] - Дата создания
  * @property {'low'|'medium'|'high'|'urgent'} [priority='medium'] - Приоритет
+ * @property {string} ee - EventEmitter
  // * @property {function(): SerializableVal} toJSON - Метод для сериализации задачи в JSON
  // * @property {function(): TodoTask} fromJSON - Метод для сериализации задачи в JSON
  */
