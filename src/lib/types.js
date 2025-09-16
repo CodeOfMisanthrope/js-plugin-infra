@@ -1,4 +1,9 @@
 /**
+ * @typedef {T | null | undefined} Nullable
+ * @template T
+ */
+
+/**
  * @typedef {Object} TodoTask
  * @property {string} id - Уникальный идентификатор
  * @property {string} title - Заголовок задачи
