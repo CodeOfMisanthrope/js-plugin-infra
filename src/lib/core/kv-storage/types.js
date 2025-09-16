@@ -1,7 +1,18 @@
 /**
- * @typedef {Object} TodoOptions
- * @property {KVStorageEngine} storage - Движок хранилища для сохранения задач
- * @property {HTMLElement} [root] - DOM элемент-контейнер для рендера todo-списка
- * @property {string} [storageKey='todos'] - Ключ для сохранения данных в хранилище
- * @property {boolean} [autoSave=true] - Автоматически сохранять изменения
+ * Примитивные типы, которые могут быть сериализованы
+ * @typedef {string | number | boolean | null} SerializablePrimitiveVal
+ */
+
+/**
+ * Объект с методом toJSON для кастомной сериализации
+ * @typedef {Object} SerializableObject
+ * @property {function(): SerializableVal} toJSON - Метод для сериализации объекта
+ */
+
+/**
+ * Значения, которые могут быть сериализованы в JSON
+ * @typedef {SerializablePrimitiveVal |
+ * SerializablePrimitiveVal[] |
+ * Record<string, SerializablePrimitiveVal> |
+ * SerializableObject} SerializableVal
  */
