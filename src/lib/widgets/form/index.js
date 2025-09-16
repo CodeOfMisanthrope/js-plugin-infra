@@ -15,6 +15,8 @@ export class Form {
   #form;
   /** @type {Todo} */
   #todo;
+  /** @type {EventEmitter} */
+  #ee;
 
   /**
    * Создает экземпляр Form
@@ -27,6 +29,7 @@ export class Form {
     // console.log(this.#inputs);
     this.#form = document.getElementsByClassName('form')[0];
     this.#todo = opts.todo;
+    this.#ee = opts.ee;
     // console.log(this.#form);
     this.#initSubmit();
   }

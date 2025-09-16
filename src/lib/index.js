@@ -15,10 +15,12 @@ export class Todo {
   #autoSave;
   /** @type {number} */
   #countTasks;
+  /** @type {EventEmitter} */
+  #ee;
 
   /**
    * Создает экземпляр Todo
-   * @param {{storage: LocalStorageEngine, storageKey: string, root: Element, autoSave: boolean}} opts - Объект опций
+   * @param {TodoOptions} opts - Объект опций
    */
   constructor(opts) {
     this.#storage = opts.storage;
@@ -26,6 +28,7 @@ export class Todo {
     this.#storageKey = opts.storageKey;
     this.#autoSave = opts.autoSave;
     this.#countTasks = 0;
+    this.#ee = opts.ee;
 
     const $el = this.#create();
     this.#mount($el);
