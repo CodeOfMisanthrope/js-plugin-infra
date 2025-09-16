@@ -18,7 +18,7 @@ export class Todo {
 
   /**
    * Создает экземпляр Todo
-   * @param {TodoOptions} opts - Объект опций
+   * @param {{storage: LocalStorageEngine, storageKey: string, root: Element, autoSave: boolean}} opts - Объект опций
    */
   constructor(opts) {
     this.#storage = opts.storage;
@@ -69,6 +69,18 @@ export class Todo {
    * @returns {void}
    */
   addTask(task) {
-    this.#storage.set(this.#getKey(this.#countTasks++), task);
+    this.#storage.set(this.#getKey(this.#countTasks++), task.toJSON());
+  }
+
+  /**
+   * Добавляет новую задачу в хранилище
+   * @param {number} num - Объект задачи для добавления
+   * @returns {Nullable<TodoTask>}
+   */
+  getTask(num) {
+    const task = this.#storage.get(this.#getKey(num));
+    if (task != null) {
+      return JSON.parse(task);
+    }
   }
 }
