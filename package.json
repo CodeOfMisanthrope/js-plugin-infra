@@ -33,6 +33,9 @@
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^24.4.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-nested": "^7.0.2",
     "rollup": "^4.50.1",
     "rollup-plugin-delete": "^3.0.1",
     "vite": "^7.1.5"
