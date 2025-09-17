@@ -38,31 +38,6 @@ export class Todo {
       this.#setCountTasks(this.#countTasks);
     }
     this.#ee = opts.ee;
-
-    const $el = this.#create();
-    this.#mount($el);
-  }
-
-  /**
-   * Монтирует элемент в корневой контейнер
-   * @private
-   * @param {HTMLElement} $el - Элемент для монтирования
-   */
-  #mount($el) {
-    this.#root.appendChild($el);
-  }
-
-  /**
-   * Создает основную структуру DOM
-   * @private
-   * @returns {HTMLElement} Корневой элемент
-   */
-  #create() {
-    const $root = document.createElement('div');
-    const $ul = document.createElement('ul');
-    $root.appendChild($ul);
-    // Доделать после addTask
-    return $root;
   }
 
   /**
@@ -110,15 +85,10 @@ export class Todo {
   }
 
   getAllTasks() {
-    // let i = this.#countTasks;
     const result = [];
     for (let i = this.#countTasks; i > 0; i--) {
-      // console.log(i);
       const task = this.getTask(i)
       if (task != null) {
-        // const {title, desc} = task;
-        // const newTask = new TodoTask();
-        // console.log(task);
         result.push(task);
       }
     }
