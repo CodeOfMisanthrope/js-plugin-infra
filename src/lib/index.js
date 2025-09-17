@@ -1,3 +1,5 @@
+import TodoTask from "~lib/task.js";
+
 export {LocalStorageEngine} from "~core/kv-storage/index.js";
 
 /**
@@ -18,6 +20,10 @@ export class Todo {
   /** @type {EventEmitter} */
   #ee;
 
+  get size() {
+    return this.#countTasks;
+  }
+
   /**
    * Создает экземпляр Todo
    * @param {TodoOptions} opts - Объект опций
@@ -27,7 +33,10 @@ export class Todo {
     this.#root = opts.root;
     this.#storageKey = opts.storageKey;
     this.#autoSave = opts.autoSave;
-    this.#countTasks = 0;
+    this.#countTasks = this.#getCountTasks();
+    if (this.#countTasks === 0) {
+      this.#setCountTasks(this.#countTasks);
+    }
     this.#ee = opts.ee;
 
     const $el = this.#create();
@@ -66,13 +75,26 @@ export class Todo {
     return `${num}-${this.#storageKey}`;
   }
 
+  #setCountTasks(num) {
+    // console.log(this.#countTasks, 111)
+    this.#storage.set("todo-count-tasks", this.#countTasks.toString());
+  }
+
+  #getCountTasks() {
+    // console.log("todo-count-tasks", this.#storage.get("todo-count-tasks"));
+    return Number(this.#storage.get("todo-count-tasks"));
+  }
+
   /**
    * Добавляет новую задачу в хранилище
    * @param {TodoTask} task - Объект задачи для добавления
    * @returns {void}
    */
   addTask(task) {
-    this.#storage.set(this.#getKey(this.#countTasks++), task.toJSON());
+    const taskString = task.toJSON();
+    this.#storage.set(this.#getKey(++this.#countTasks), taskString);
+    this.#setCountTasks(this.#countTasks);
+    this.#ee.emit('addTask', taskString);
   }
 
   /**
@@ -83,7 +105,23 @@ export class Todo {
   getTask(num) {
     const task = this.#storage.get(this.#getKey(num));
     if (task != null) {
-      return JSON.parse(task);
+      return new TodoTask(JSON.parse(task));
     }
+  }
+
+  getAllTasks() {
+    // let i = this.#countTasks;
+    const result = [];
+    for (let i = this.#countTasks; i > 0; i--) {
+      // console.log(i);
+      const task = this.getTask(i)
+      if (task != null) {
+        // const {title, desc} = task;
+        // const newTask = new TodoTask();
+        // console.log(task);
+        result.push(task);
+      }
+    }
+    return result;
   }
 }
