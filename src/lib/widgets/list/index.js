@@ -18,8 +18,8 @@ export default class TodoList {
     this.#todo = opts.todo;
     this.#listClass = opts.listClass;
 
-    this.#ee.on('addTask', this.addTask);
-
+    this.#ee.on('addTask', this.addTask.bind(this));
+    console.log(this.#ee);
     this.#initTasks();
   }
 
@@ -55,7 +55,9 @@ export default class TodoList {
     }
   }
 
-  addTask(num) {
+  addTask(task) {
+    console.log(task, task.title, task.desc);
+    this.#getTaskItemTemplate(task);
     // console.log('List add task');
   }
 
