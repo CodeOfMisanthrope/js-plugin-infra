@@ -32,18 +32,26 @@ export default class TodoList {
   #getTaskItemTemplate(data) {
     const $item = document.createElement("li");
     $item.className = "task__item";
+    const $content = document.createElement("div");
+    $content.className = "task__content";
+    $item.appendChild($content);
     const $taskTitle = document.createElement("h4");
     $taskTitle.className = "task__title";
     $taskTitle.innerText = data.title;
+    $content.appendChild($taskTitle);
     const $taskDescTitle = document.createElement("span");
     $taskTitle.className = "task__desc-title";
     $taskDescTitle.innerText = "Описание задачи:";
+    $content.appendChild($taskDescTitle);
     const $taskDesc = document.createElement("p");
     $taskDesc.className = "task__desc";
     $taskDesc.innerText = data.desc;
-    $item.appendChild($taskTitle);
-    $item.appendChild($taskDescTitle);
-    $item.appendChild($taskDesc);
+    $content.appendChild($taskDesc);
+    const $checkbox = document.createElement("input");
+    $checkbox.className = "task__checkbox checkbox";
+    // $checkbox.id = "task__checkbox";
+    $checkbox.type = "checkbox";
+    $item.appendChild($checkbox);
     this.#listClass.appendChild($item);
   }
 
