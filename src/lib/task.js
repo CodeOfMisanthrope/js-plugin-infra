@@ -9,6 +9,14 @@ export default class TodoTask {
   /** @type {string} */
   #desc;
 
+  get title() {
+    return this.#title;
+  }
+
+  get desc() {
+    return this.#desc;
+  }
+
   /**
    * Создает экземпляр TodoTask
    * @param {TodoTaskOptions} opts - Объект опций для создания задачи
