@@ -61,6 +61,7 @@ export class Form {
       const {name,value} = input;
       taskData[name] = value;
     }
+    taskData["id"] = this.#todo.size + 1;
     const newTask = new TodoTask(taskData);
     this.#todo.addTask(newTask);
   }

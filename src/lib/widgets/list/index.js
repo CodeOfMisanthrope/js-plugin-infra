@@ -30,6 +30,7 @@ export default class TodoList {
   }
 
   #getTaskItemTemplate(data) {
+    console.log(data.id)
     const $item = document.createElement("li");
     $item.className = "task__item";
     const $content = document.createElement("div");
@@ -49,7 +50,7 @@ export default class TodoList {
     $content.appendChild($taskDesc);
     const $checkbox = document.createElement("input");
     $checkbox.className = "task__checkbox checkbox";
-    // $checkbox.id = "task__checkbox";
+    $checkbox.id = `task__checkbox-${data.id}`;
     $checkbox.type = "checkbox";
     $item.appendChild($checkbox);
     this.#listClass.appendChild($item);
