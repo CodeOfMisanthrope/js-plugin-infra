@@ -32,5 +32,22 @@
 .task {
   max-width: 450px;
   width: 100%;
-  /*background-color: #ffc5c5;*/
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    padding: 15px;
+    background-color: #f3f3f3;
+    /*background-color: #e5ffc9;*/
+    border-radius: 10px;
+  }
+
+  &__desc {
+    &-title {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
 }
