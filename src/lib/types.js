@@ -15,9 +15,9 @@
 /**
  * @typedef {Object} TodoTaskOptions
  * @implements {SerializableObject<TodoTask>}
- * @property {string} [id] - Уникальный идентификатор
+ * @property {string} id - Уникальный идентификатор
  * @property {string} title - Заголовок задачи
- * @property {string} [description] - Описание задачи
+ * @property {string} [desc] - Описание задачи
  * @property {boolean} [completed] - Статус выполнения
  * @property {Date} [createdAt] - Дата создания
  * @property {'low'|'medium'|'high'|'urgent'} [priority='medium'] - Приоритет
