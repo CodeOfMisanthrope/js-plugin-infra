@@ -56,15 +56,12 @@ export class Form {
   }
 
   submit() {
-    console.log('submit');
     const taskData = {};
     for (const input of this.#inputs) {
-      console.log(input.name);
       const {name,value} = input;
       taskData[name] = value;
     }
-    console.log(taskData)
     const newTask = new TodoTask(taskData);
-    this.#todo.addTask(newTask)
+    this.#todo.addTask(newTask);
   }
 }
