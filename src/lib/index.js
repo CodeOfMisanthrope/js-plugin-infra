@@ -94,7 +94,7 @@ export class Todo {
     const taskString = task.toJSON();
     this.#storage.set(this.#getKey(++this.#countTasks), taskString);
     this.#setCountTasks(this.#countTasks);
-    this.#ee.emit('addTask', taskString);
+    this.#ee.emit('addTask', task);
   }
 
   /**
